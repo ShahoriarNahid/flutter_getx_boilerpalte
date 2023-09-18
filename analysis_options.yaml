@@ -1,0 +1,35 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+  strong-mode:
+    implicit-casts: true
+    implicit-dynamic: true
+  errors:
+    # treat missing required parameters as a warning (not a hint)
+    missing_required_param: warning
+    # treat missing returns as a warning (not a hint)
+    missing_return: warning
+    # allow having TODO comments in the code
+    todo: ignore
+    # allow self-reference to deprecated members (we do this because otherwise we have
+    # to annotate every member in every test, assert, etc, when we deprecate something)
+    deprecated_member_use_from_same_package: ignore
+    # TODO(ianh): https://github.com/flutter/flutter/issues/74381
+    # Clean up existing unnecessary imports, and remove line to ignore.
+    unnecessary_import: ignore
+    # Turned off until null-safe rollout is complete.
+    unnecessary_null_comparison: ignore
+
+linter:
+  rules:
+    avoid_print: false  # Uncomment to disable the `avoid_print` rule
+    prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    prefer_const_constructors: false
+    use_key_in_widget_constructors: false
+    prefer_const_literals_to_create_immutables: false
+    prefer_const_constructors_in_immutables: false
+    prefer_if_null_operators: false
+    depend_on_referenced_packages: false
+    prefer_typing_uninitialized_variables: false
+    file_names: false
+    sort_child_properties_last: false
+    non_constant_identifier_names: false
