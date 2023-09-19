@@ -85,7 +85,7 @@ class AppTheme {
   static Color color3 = hexToColor('#8A8D93');
   static Color color4 = hexToColor('#78909C');
   static Color color5 = hexToColor('#EAEAF3');
-  static Color color6 = hexToColor('#9BA9staticB3');
+  static Color color6 = hexToColor('#9BA9B3');
 
   static Color black = Colors.black;
 
