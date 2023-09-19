@@ -5,13 +5,10 @@ import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 
-
 import '../config/app_theme.dart';
 import '../pages/main_page.dart';
 
-
 class ConfigController extends GetxController {
-
   Future<void> initAppConfig() async {
     WidgetsFlutterBinding.ensureInitialized();
 
@@ -41,7 +38,6 @@ class ConfigController extends GetxController {
     await Future.delayed(Duration(seconds: 1));
 
     Get.offAll(MainPage());
-
 
 // ---------------------------------------------------
   }
