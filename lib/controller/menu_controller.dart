@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../base/base.dart';
 import '../config/app_theme.dart';
+import '../helper/k_text.dart';
 import '../model/left_side_bar_model.dart';
 import '../model/right_side_bar_model.dart';
 
@@ -271,6 +273,28 @@ class MenuController1 extends GetxController {
           height: 1000,
           color: Colors.white,
           width: Get.width,
+          child: Column(
+            children: [
+              TextButton(
+                style: ButtonStyle(),
+                onPressed: () {
+                  Base.languageC.changeLanguage('bn');
+                },
+                child: KText(
+                  text: 'submit'.tr,
+                ),
+              ),
+              TextButton(
+                style: ButtonStyle(),
+                onPressed: () {
+                  Base.languageC.changeLanguage('en_US');
+                },
+                child: KText(
+                  text: 'submit'.tr,
+                ),
+              ),
+            ],
+          ),
         );
 
       case 1:
