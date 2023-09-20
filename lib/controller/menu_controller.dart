@@ -402,16 +402,6 @@ class MenuController1 extends GetxController {
 //left
   void pushMenuleft(String title) {
     switch (title) {
-      // case 'Post My Attendance':
-      //   back();
-      //   return push(AttendancePage());
-      // case 'Update My Profile':
-      //   back();
-      //   return push(UpdateMyProfile());
-      // case 'Employee Leave Application':
-      //   back();
-      //   return push(EmployeeLeaveApplicationpPage());
-
       // case '':
       //   back();
       //   return push();
@@ -435,143 +425,10 @@ class MenuController1 extends GetxController {
 //right
   void pushMenu(String title) {
     switch (title) {
-      // case 'Place Transport Orders':
+      // case '':
       //   back();
-      //   return push(TransportationWorkbenchPage());
-      // case 'Add Vehicle to Agency Pool':
-      //   back();
-      //   return push(AddVehicleToAgencyPage());
+      //   return push();
 
-      // case 'Add Driver to Agency Pool':
-      //   back();
-      //   return push(AddDriverToAgencyPage());
-      // case 'Project Sites on Map':
-      //   back();
-      //   return push(SiteLocationsPage());
-      // case 'Site Completion Report':
-      //   back();
-      //   return push(SiteCompletionStatusPage());
-      // case 'Assign Vehicles and Drivers':
-      //   back();
-      //   return push(LogisticWorkbenchPage());
-
-      // case 'Inspect Materials at Source':
-      //   back();
-      //   return push(InspectionWorkbenchPage());
-
-      // case 'Load Materials to Vehicle':
-      //   back();
-      //   return push(WareHouseWorkbenchPage());
-
-      // case 'Confirm Vehicle Readiness':
-      //   back();
-      //   return push(DriverWorkbenchPage());
-
-      // case 'Inspect Materials at Destination':
-      //   back();
-      //   return push(InspectionWorkbenchDestinationPage());
-
-      // case 'Accept Delivered Materials':
-      //   back();
-      //   return push(ReceivingWorkbenchPage());
-
-      // case 'Post My Task Progress':
-      //   back();
-      //   return push(PostMyTaskProgress());
-
-      // case 'My Geography for Site Installation':
-      //   back();
-      //   return push(MyGeographyForSiteInstaller());
-
-      // case 'My Geography for Site Inspection':
-      //   back();
-      //   return push(MyGeographyForSiteInspector());
-
-      // case 'My Geography for Network Installation':
-      //   back();
-      //   return push(MyGeographyForNetworkInstaller());
-
-      // case 'My Geography for Network Inspection':
-      //   back();
-      //   return push(MyGeographyForNetworkInspector());
-
-      // case 'My Geography for Equipment Installation':
-      //   back();
-      //   return push(MyGeographyForEquipmentInstaller());
-
-      // case 'My Geography for Equipment Inspection':
-      //   back();
-      //   return push(MyGeographyForEquipmentInspector());
-
-      // // case 'Project Dashboard':
-      // //   back();
-      // //   return push(ProjectDashboardPage());
-
-      // case 'Transportation Dashboard':
-      //   back();
-      //   return push(TransportationDashboardTransportAgencyPage());
-
-      // case 'Register My Vehicle':
-      //   back();
-      //   return push(CreateVehiclePage());
-
-      // case 'Register Driver':
-      //   back();
-      //   return push(RegisterAsDriverPage());
-      // case 'Project Planning Board':
-      //   back();
-      //   return push(ProjectPlanningBoardPage());
-      // // case 'Change Request Workbench':
-      // //   back();
-      // //   return push(ProjectActivityGroupBoardPage());
-
-      // case 'Project Progress Report':
-      //   back();
-      //   return push(ProjectProgressDashboardPage());
-
-      // case 'Network Topology for Geography':
-      //   back();
-      //   return push(NetworkTopologyPage());
-      // case 'Project Sites':
-      //   back();
-      //   return push(RequestSiteRelocationPage());
-      // // case 'Maintain Test Type':
-      // //   back();
-      // //   return push(MaintainTestTypePage());
-      // // case '':
-      // //   back();
-      // //   return push();
-      // case 'Post Site Installation Progress':
-      //   back();
-      //   return push(SiteCompletionPage());
-      // case 'Post Site Inspection Result':
-      //   back();
-      //   return push(SiteInspectionPage());
-      // case 'Submit Change Request':
-      //   back();
-      //   return push(ChangeRequestWorkbenchPage());
-
-      // case 'Post Conduct Project Test':
-      //   back();
-      //   return push(RecordTestResultCreatePage());
-      // case 'Project Test Types':
-      //   back();
-      //   return push(MaintainTestTypePage());
-      // case 'Post Network Installation Progress':
-      //   back();
-      //   return push(LinkWorkStatusPage());
-      // case 'Post Network Inspection Result':
-      //   back();
-      //   return push(LinkInspectionPage());
-      // case 'Project Mgt. Settings':
-      //   back();
-      //   return push(ProjectManagementSettingsPage());
-      // case 'Logistic Settings':
-      //   back();
-      //   return push(LogisticsPolicySettingsPage());
-      // case 'NMS Settings':
-      //   back();
-      //   return push(NetworkManagementSettingsPage());
       default:
         {
           Get.snackbar('Attention!!', 'Development in progress',

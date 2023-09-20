@@ -27,11 +27,11 @@ class App extends StatelessWidget {
         child: widget!,
       ),
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.themeData,
+      // theme: AppTheme.themeData,
       //theme
-      // theme: Themes.light,
-      // darkTheme: Themes.dark,
-      // themeMode: ThemeMode.light,
+      theme: Themes.light,
+      darkTheme: Themes.dark,
+      themeMode: ThemeMode.light,
       home: SplashPage(),
     );
   }

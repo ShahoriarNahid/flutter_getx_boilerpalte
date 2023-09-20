@@ -41,12 +41,16 @@ class _MainPageState extends State<MainPage> {
             onTap: (() {
               Get.changeThemeMode(ThemeMode.light);
             }),
-            child: RenderSvg(
-              height: 70,
-              width: 70,
-              fit: BoxFit.cover,
-              path: 'attend',
+            child: Icon(
+              Icons.add_home,
+              size: 30,
             ),
+            // child: RenderSvg(
+            //   height: 70,
+            //   width: 70,
+            //   fit: BoxFit.cover,
+            //   path: 'attend',
+            // ),
           ),
           drawer: LeftDrawer(),
           endDrawer: RightDrawer(),

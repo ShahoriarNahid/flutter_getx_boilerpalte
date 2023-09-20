@@ -42,7 +42,7 @@ class LeftDrawer extends StatelessWidget {
                               ),
                             ]),
                             child: CircleAvatar(
-                              backgroundColor: AppTheme.color4,
+                              // backgroundColor: AppTheme.color4,
                               radius: 45,
                               child: RenderSvg(path: 'avatar_placeholder'),
                             )),
