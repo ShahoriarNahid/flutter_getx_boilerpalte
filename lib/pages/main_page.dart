@@ -28,9 +28,7 @@ class _MainPageState extends State<MainPage> {
       ],
     );
     SystemChrome.restoreSystemUIOverlays();
-
     super.initState();
-    // Get.put(DeepLinkController()).handleInitialUri();
   }
 
   @override
@@ -41,7 +39,7 @@ class _MainPageState extends State<MainPage> {
         child: Scaffold(
           floatingActionButton: InkWell(
             onTap: (() {
-              // push(AttendancePage());
+              Get.changeThemeMode(ThemeMode.light);
             }),
             child: RenderSvg(
               height: 70,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_boilerpalte/theme/theme.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'base/base_binding.dart';
@@ -27,6 +28,10 @@ class App extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeData,
+      //theme
+      // theme: Themes.light,
+      // darkTheme: Themes.dark,
+      // themeMode: ThemeMode.light,
       home: SplashPage(),
     );
   }
