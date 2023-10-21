@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../base/base.dart';
 import '../config/app_theme.dart';
-import '../controller/menu_controller.dart';
 import '../helper/hex_color.dart';
 import '../helper/render_svg.dart';
 
@@ -223,7 +221,7 @@ class LeftDrawer extends StatelessWidget {
                       expansionCallback: (index, isExpanded) {
                         //  print(isExpanded);
                       },
-                      children: Base.menuC
+                      children: Base.menuController
                           .getLeftDrawer()
                           .map(
                             (item) => ExpansionPanelRadio(
@@ -296,7 +294,7 @@ class LeftDrawer extends StatelessWidget {
                                               //   myAttendanceDashboardC.getAbsentInMonth(isFirst: true);
                                               // }
 
-                                              Base.menuC.pushMenuleft(tile.title!);
+                                              Base.menuController.pushMenuleft(tile.title!);
                                             },
                                           ),
                                         ),

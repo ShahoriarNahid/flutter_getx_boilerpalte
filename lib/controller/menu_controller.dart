@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_boilerpalte/pages/home_page.dart';
 import 'package:get/get.dart';
 import '../base/base.dart';
 import '../config/app_theme.dart';
@@ -7,7 +7,7 @@ import '../helper/k_text.dart';
 import '../model/left_side_bar_model.dart';
 import '../model/right_side_bar_model.dart';
 
-class MenuController1 extends GetxController {
+class MenuController extends GetxController {
   final globalKey = GlobalKey<ScaffoldState>();
 
   List<LeftSidebar> leftSidebar = [];
@@ -261,14 +261,13 @@ class MenuController1 extends GetxController {
     ];
   }
 
-  final currentIndex = RxInt(1);
+  final currentIndex = RxInt(2);
 
   set setCurrentIndex(String item) => currentIndex.value = getMenuIndex(item);
 
   Widget getCurrentPage() {
     switch (currentIndex.value) {
       case 0:
-        // return HomePage();
         return Container(
           height: 1000,
           color: Colors.white,
@@ -278,16 +277,16 @@ class MenuController1 extends GetxController {
               TextButton(
                 style: ButtonStyle(),
                 onPressed: () {
-                  Base.languageC.changeLanguage('bn');
+                  Base.languageController.changeLanguage('bn');
                 },
                 child: KText(
-                  text: 'submit'.tr,
+                  text: 'submit'.trParams({'email': 'nahid@gmail.com'}),
                 ),
               ),
               TextButton(
                 style: ButtonStyle(),
                 onPressed: () {
-                  Base.languageC.changeLanguage('en_US');
+                  Base.languageController.changeLanguage('en_US');
                 },
                 child: KText(
                   text: 'submit'.tr,
@@ -296,16 +295,26 @@ class MenuController1 extends GetxController {
             ],
           ),
         );
-
       case 1:
         return Container(
           height: 1000,
-          color: Colors.white,
+          color: Colors.black,
           width: Get.width,
         );
-
-      // case 2:
-      //   return ;
+      case 2:
+        return HomePage();
+      case 3:
+        return Container(
+          height: 1000,
+          color: Colors.blue,
+          width: Get.width,
+        );
+      case 4:
+        return Container(
+          height: 1000,
+          color: Colors.yellow,
+          width: Get.width,
+        );
 
       default:
         return Container(
@@ -340,10 +349,10 @@ class MenuController1 extends GetxController {
 
   final bottomMenus = [
     'bottom_1.svg',
-    // 'bottom_2.svg',
+    'bottom_2.svg',
     'bottom_3.svg',
-    // 'bottom_4.svg',
-    'bottom_5.svg'
+    'bottom_4.svg',
+    'bottom_5.svg',
   ];
 
 //   // 3-12-2022..........................................................

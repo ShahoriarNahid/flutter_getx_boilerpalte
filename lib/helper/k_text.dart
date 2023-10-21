@@ -7,8 +7,7 @@ class KText extends StatelessWidget {
   final Color? color;
   final double? fontSize;
   final TextAlign? textAlign;
-
-  TextOverflow textOverflow;
+  final TextOverflow textOverflow;
   final int? maxLines;
   final bool? bold;
 

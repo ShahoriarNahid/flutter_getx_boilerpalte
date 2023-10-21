@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_boilerpalte/base/base.dart';
 import 'package:get/get.dart';
-
 import '../config/app_theme.dart';
-import '../controller/menu_controller.dart';
 import '../helper/hex_color.dart';
 import '../helper/k_text.dart';
 import '../helper/render_svg.dart';
 
 class RightDrawer extends StatelessWidget {
-  final menuC = Get.put(MenuController1());
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -32,7 +30,7 @@ class RightDrawer extends StatelessWidget {
               ),
             ),
             Column(
-              children: menuC
+              children: Base.menuController
                   .getRightDrawer()
                   .map(
                     (itemY) => Column(
@@ -96,7 +94,7 @@ class RightDrawer extends StatelessWidget {
                                                   (item) => InkWell(
                                                     onTap: () {
                                                       // back();
-                                                      menuC.pushMenu(item.subTitleofTitle!);
+                                                      Base.menuController.pushMenu(item.subTitleofTitle!);
                                                     },
                                                     child: Column(
                                                       children: [

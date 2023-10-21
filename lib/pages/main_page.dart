@@ -4,11 +4,11 @@ import 'package:flutter_getx_boilerpalte/pages/right_Drawer.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../base/base.dart';
 import '../components/k_appbar.dart';
 import '../config/app_theme.dart';
 import '../config/constants.dart';
-import '../controller/menu_controller.dart';
-import '../helper/render_svg.dart';
+
 import 'left_drawer.dart';
 
 class MainPage extends StatefulWidget {
@@ -17,7 +17,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final menuC = Get.put(MenuController1());
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIMode(
@@ -42,7 +41,7 @@ class _MainPageState extends State<MainPage> {
               Get.changeThemeMode(ThemeMode.light);
             }),
             child: Icon(
-              Icons.add_home,
+              Icons.account_balance_wallet_rounded,
               size: 30,
             ),
             // child: RenderSvg(
@@ -62,32 +61,34 @@ class _MainPageState extends State<MainPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: menuC.bottomMenus
+              children: Base.menuController.bottomMenus
                   .map(
                     (item) => GestureDetector(
                       onTap: () {
-                        if (menuC.getMenuIndex(item) == 2) {
-                          // searchLocationBottomSheet();
-                        } else {
-                          menuC.setCurrentIndex = item;
-                        }
+                        Base.menuController.setCurrentIndex = item;
+                        //   if (Base.menuController.getMenuIndex(item) == 4) {
+                        //     // searchLocationBottomSheet();
+                        //   } else {
+                        //     Base.menuController.setCurrentIndex = item;
+                        //   }
                       },
+
+                      // child: SvgPicture.asset(
+                      //   '${Constants.svgPath}/$item',
+                      //   colorFilter: ColorFilter.mode(AppTheme.color2, BlendMode.srcIn),
+                      // ),
                       child: SvgPicture.asset(
                         '${Constants.svgPath}/$item',
-                        color: menuC.getMenuIndex(item) == 0
-                            ? Colors.transparent
-                            : menuC.getMenuIndex(item) == 1
-                                ? null
-                                : menuC.currentIndex.value == menuC.getMenuIndex(item)
-                                    ? AppTheme.color2
-                                    : AppTheme.color6,
+                        color: Base.menuController.currentIndex.value == Base.menuController.getMenuIndex(item)
+                            ? AppTheme.color2
+                            : AppTheme.color6,
                       ),
                     ),
                   )
                   .toList(),
             ),
           ),
-          body: menuC.getCurrentPage(),
+          body: Base.menuController.getCurrentPage(),
         ),
       ),
     );

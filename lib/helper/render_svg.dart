@@ -18,6 +18,8 @@ class RenderSvg extends StatelessWidget {
       height: height,
       width: width,
       color: color,
+      // colorFilter: ColorFilter.mode(color!, BlendMode.srcIn),
+
       fit: fit == null ? BoxFit.contain : fit!,
     );
   }

@@ -6,7 +6,7 @@ abstract class AppTranslation {
 }
 
 final Map<String, String> enUS = {
-  'submit': 'Submit',
+  'submit': 'Submit @email',
 };
 
 final Map<String, String> bn = {

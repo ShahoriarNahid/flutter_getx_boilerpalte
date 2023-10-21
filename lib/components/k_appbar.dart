@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_getx_boilerpalte/base/base.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-
 import '../config/app_theme.dart';
 import '../config/constants.dart';
-import '../controller/menu_controller.dart';
 import '../helper/hex_color.dart';
 import '../helper/k_text.dart';
 import '../helper/route.dart';
 import '../pages/main_page.dart';
 
-class KAppbar extends StatelessWidget with PreferredSizeWidget {
+class KAppbar extends StatelessWidget implements PreferredSizeWidget {
   // Widget? flexiblespace;
   // Widget? bottom;
   // KAppbar({
@@ -21,7 +19,7 @@ class KAppbar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
-  final menuC = Get.put(MenuController1());
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -40,7 +38,7 @@ class KAppbar extends StatelessWidget with PreferredSizeWidget {
       ),
       title: InkWell(
         onTap: () {
-          menuC.currentIndex.value = 0;
+          Base.menuController.currentIndex.value = 0;
           offAll(MainPage());
         },
         child: Padding(
@@ -61,11 +59,11 @@ class KAppbar extends StatelessWidget with PreferredSizeWidget {
         systemNavigationBarDividerColor: Colors.grey[50],
         systemNavigationBarColor: Colors.grey[50],
       ),
-      actions: menuC.appbarMenus
+      actions: Base.menuController.appbarMenus
           .map(
             (item) => GestureDetector(
               onTap: () {
-                switch (menuC.appbarMenus.indexOf(item)) {
+                switch (Base.menuController.appbarMenus.indexOf(item)) {
                   case 0:
                     // push(MyApprovalDashboardPage());
                     break;
@@ -77,7 +75,7 @@ class KAppbar extends StatelessWidget with PreferredSizeWidget {
                     break;
                 }
               },
-              child: menuC.appbarMenus.indexOf(item) == 1
+              child: Base.menuController.appbarMenus.indexOf(item) == 1
                   ? Container(
                       margin: EdgeInsets.symmetric(horizontal: 2, vertical: 8),
                       child: IconButton(
@@ -98,7 +96,7 @@ class KAppbar extends StatelessWidget with PreferredSizeWidget {
                           padding: EdgeInsets.all(7),
                           child: SvgPicture.asset(
                             '${Constants.svgPath}/$item',
-                            color: AppTheme.textColor,
+                            colorFilter: ColorFilter.mode(AppTheme.textColor, BlendMode.srcIn),
                           ),
                         ),
                         // if (notificationsC.notifications.isNotEmpty && menuC.appbarMenus.indexOf(item) == 3)

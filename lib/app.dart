@@ -3,7 +3,6 @@ import 'package:flutter_getx_boilerpalte/theme/theme.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'base/base_binding.dart';
-import 'config/app_theme.dart';
 import 'config/scroll_behavior_modified.dart';
 import 'helper/hex_color.dart';
 import 'localization/local_string.dart';
@@ -15,12 +14,17 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       //initial Bindings
       initialBinding: BaseBinding(),
+      smartManagement: SmartManagement.onlyBuilder,
       translationsKeys: AppTranslation.translationsKeys,
 
       ///  locale: Get.deviceLocale,
-      fallbackLocale: Locale('bn', 'BD'),
-      locale: Locale('bn', 'BD'),
-      defaultTransition: Transition.fade,
+      fallbackLocale: Locale(
+        'bn',
+      ),
+      locale: Locale(
+        'bn',
+      ),
+      defaultTransition: Transition.cupertino,
       color: hexToColor('#78909C'),
       builder: (context, widget) => ScrollConfiguration(
         behavior: ScrollBehaviorModified(),

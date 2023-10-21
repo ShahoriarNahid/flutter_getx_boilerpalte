@@ -9,8 +9,23 @@ import '../config/app_theme.dart';
 import '../pages/main_page.dart';
 
 class ConfigController extends GetxController {
+  @override
+  void onInit() {
+    initAppConfig();
+    super.onInit();
+  }
+
+  @override
+  void onReady() async {
+    super.onReady();
+
+    await 2.delay();
+
+    Get.to(() => MainPage());
+  }
+
   Future<void> initAppConfig() async {
-    WidgetsFlutterBinding.ensureInitialized();
+    // WidgetsFlutterBinding.ensureInitialized();
 
     //--------------------- End -------------------------
 
@@ -33,12 +48,12 @@ class ConfigController extends GetxController {
     // ---------------------------------------------------
   }
 
-// Initialize page after default configuration
-  void init() async {
-    await Future.delayed(Duration(seconds: 1));
+// // Initialize page after default configuration
+//   void init() async {
+//     await Future.delayed(Duration(seconds: 1));
 
-    Get.offAll(MainPage());
+//     Get.offAll(() => MainPage());
 
-// ---------------------------------------------------
-  }
+// // ---------------------------------------------------
+//   }
 }
