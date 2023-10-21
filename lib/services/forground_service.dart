@@ -1,4 +1,5 @@
 import 'dart:isolate';
+
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 import 'package:flutter_getx_boilerpalte/helper/k_log.dart';
 import 'package:get/get.dart';
@@ -91,6 +92,7 @@ class MyLocationServiceHandler extends TaskHandler {
       case 'STOP':
         await FlutterForegroundTask.stopService();
         break;
+
       case 'RESEUME':
         klog('Reseume button Clicked');
     }

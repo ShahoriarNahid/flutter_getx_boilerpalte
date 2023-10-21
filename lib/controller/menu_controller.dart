@@ -268,6 +268,8 @@ class MenuController extends GetxController {
   Widget getCurrentPage() {
     switch (currentIndex.value) {
       case 0:
+        return Container();
+      case 1:
         return Container(
           height: 1000,
           color: Colors.white,
@@ -295,12 +297,7 @@ class MenuController extends GetxController {
             ],
           ),
         );
-      case 1:
-        return Container(
-          height: 1000,
-          color: Colors.black,
-          width: Get.width,
-        );
+
       case 2:
         return HomePage();
       case 3:
