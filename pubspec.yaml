@@ -26,6 +26,7 @@ dependencies:
   hive: ^2.2.3
   flutter_foreground_task: ^6.1.2
   flutter_isolate: ^2.0.4
+  syncfusion_flutter_maps: ^23.1.41
 
 dev_dependencies:
   flutter_test:

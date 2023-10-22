@@ -6,6 +6,7 @@ import '../config/app_theme.dart';
 import '../helper/k_text.dart';
 import '../model/left_side_bar_model.dart';
 import '../model/right_side_bar_model.dart';
+import '../pages/map_page.dart';
 
 class MenuController extends GetxController {
   final globalKey = GlobalKey<ScaffoldState>();
@@ -268,7 +269,7 @@ class MenuController extends GetxController {
   Widget getCurrentPage() {
     switch (currentIndex.value) {
       case 0:
-        return Container();
+        return MapPage();
       case 1:
         return Container(
           height: 1000,
