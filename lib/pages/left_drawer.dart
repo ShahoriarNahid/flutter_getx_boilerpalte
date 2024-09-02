@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import '../base/base.dart';
 import '../config/app_theme.dart';
-import '../controller/menu_controller.dart';
 import '../helper/hex_color.dart';
 import '../helper/render_svg.dart';
 

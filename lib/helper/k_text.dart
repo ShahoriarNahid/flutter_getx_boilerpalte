@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../config/app_theme.dart';
 
+// ignore: must_be_immutable
 class KText extends StatelessWidget {
   final String? text;
   final Color? color;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_getx_boilerpalte/config/custom_colors_theme.dart';
 
 import '../helper/hex_color.dart';
 
@@ -86,79 +87,106 @@ class AppTheme {
   static Color color4 = hexToColor('#78909C');
   static Color color5 = hexToColor('#EAEAF3');
   static Color color6 = hexToColor('#9BA9B3');
+  static Color colorOrange = hexToColor('#FFA400');
+  static Color colorGray = hexToColor('#373A36');
 
   static Color black = Colors.black;
 
-  static final themeData = ThemeData(
-    useMaterial3: true,
-    backgroundColor: hexToColor('#78909C'),
-    applyElevationOverlayColor: false,
-    scaffoldBackgroundColor: Colors.white,
-    primaryColor: primaryColor,
-    dialogBackgroundColor: Colors.white,
-    canvasColor: Colors.white,
-    brightness: Brightness.light,
-    inputDecorationTheme: InputDecorationTheme(
-      errorStyle: TextStyle(
-        color: hexToColor('#e74c3c').withOpacity(.5),
+  static ThemeData get({required bool isLight}) {
+    final base = isLight ? ThemeData.light() : ThemeData.dark();
+    return base.copyWith(
+      extensions: [
+        CustomColorsTheme(
+          colorLabelColor: isLight ? Colors.grey : const Color(0xFF7A7FB0),
+          bottomNavigationBarBackgroundColor: isLight ? Colors.blue : colorGray,
+          activeNavigationBarColor: isLight ? Colors.yellow : colorOrange,
+          notActiveNavigationBarColor: Colors.white,
+          shadowNavigationBarColor: isLight ? Colors.blue : colorOrange,
+        )
+      ],
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: isLight ? Colors.yellow : colorOrange,
       ),
-      // contentPadding: EdgeInsets.symmetric(vertical: 12),
-      // border: OutlineInputBorder(
-      //   // borderSide: BorderSide.none,
-      //   borderRadius: BorderRadius.circular(
-      //     10,
-      //   ),
-      // ),
-      enabledBorder: UnderlineInputBorder(
-          // borderSide: BorderSide.none,
-          borderSide: BorderSide(color: AppTheme.primaryColor, width: .8)),
-      focusedBorder: UnderlineInputBorder(
-          // borderSide: BorderSide.none,
-          borderSide: BorderSide(color: AppTheme.primaryColor, width: .8)),
-      errorBorder: UnderlineInputBorder(
-          // borderSide: BorderSide.none,
-          borderSide: BorderSide(color: Colors.red, width: .8)),
-      focusedErrorBorder: UnderlineInputBorder(
-          // borderSide: BorderSide.none,
-          borderSide: BorderSide(color: AppTheme.primaryColor, width: .8)),
-      // fillColor: hexToColor('#F2F7FB'),
-      // filled: true,
-      hintStyle: TextStyle(
-        color: hexToColor('#8A8D93'),
+      appBarTheme: AppBarTheme(
+        backgroundColor: isLight ? Colors.blue : colorGray,
       ),
-    ),
-    appBarTheme: AppBarTheme(
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: AppTheme.appbarColor,
-        statusBarBrightness: Brightness.dark,
-        statusBarIconBrightness: Brightness.dark,
-        systemNavigationBarIconBrightness: Brightness.dark,
+      colorScheme: base.colorScheme.copyWith(
+        surface: isLight ? Colors.blue : colorGray,
       ),
-    ),
-    textTheme: TextTheme(
-      displayLarge: TextStyle(
-        color: textColor,
-      ),
-      displayMedium: TextStyle(color: textColor),
-      displaySmall: TextStyle(color: textColor),
-      headlineMedium: TextStyle(color: textColor),
-      headlineSmall: TextStyle(color: textColor),
-      titleMedium: TextStyle(color: textColor),
-      titleSmall: TextStyle(color: textColor),
-      labelLarge: TextStyle(color: textColor),
-    ),
-    iconTheme: IconThemeData(color: Colors.black54),
-    pageTransitionsTheme: PageTransitionsTheme(
-      builders: {TargetPlatform.android: CupertinoPageTransitionsBuilder(), TargetPlatform.iOS: CupertinoPageTransitionsBuilder()},
-    ),
-    fontFamily: 'Cera Regular',
-    primaryTextTheme: TextTheme(
-      displayMedium: TextStyle(color: Colors.black54),
-    ),
-    textSelectionTheme: TextSelectionThemeData(
-      cursorColor: Colors.black54,
-      selectionColor: Colors.black54,
-      selectionHandleColor: Colors.black54,
-    ),
-  );
+    );
+  }
+  // static final themeData = ThemeData(
+
+  //   useMaterial3: true,
+
+  //   backgroundColor: hexToColor('#78909C'),
+  //   applyElevationOverlayColor: false,
+  //   scaffoldBackgroundColor: Colors.white,
+  //   primaryColor: primaryColor,
+  //   dialogBackgroundColor: Colors.white,
+  //   canvasColor: Colors.white,
+  //   brightness: Brightness.light,
+  //   inputDecorationTheme: InputDecorationTheme(
+  //     errorStyle: TextStyle(
+  //       color: hexToColor('#e74c3c').withOpacity(.5),
+  //     ),
+  //     // contentPadding: EdgeInsets.symmetric(vertical: 12),
+  //     // border: OutlineInputBorder(
+  //     //   // borderSide: BorderSide.none,
+  //     //   borderRadius: BorderRadius.circular(
+  //     //     10,
+  //     //   ),
+  //     // ),
+  //     enabledBorder: UnderlineInputBorder(
+  //         // borderSide: BorderSide.none,
+  //         borderSide: BorderSide(color: AppTheme.primaryColor, width: .8)),
+  //     focusedBorder: UnderlineInputBorder(
+  //         // borderSide: BorderSide.none,
+  //         borderSide: BorderSide(color: AppTheme.primaryColor, width: .8)),
+  //     errorBorder: UnderlineInputBorder(
+  //         // borderSide: BorderSide.none,
+  //         borderSide: BorderSide(color: Colors.red, width: .8)),
+  //     focusedErrorBorder: UnderlineInputBorder(
+  //         // borderSide: BorderSide.none,
+  //         borderSide: BorderSide(color: AppTheme.primaryColor, width: .8)),
+  //     // fillColor: hexToColor('#F2F7FB'),
+  //     // filled: true,
+  //     hintStyle: TextStyle(
+  //       color: hexToColor('#8A8D93'),
+  //     ),
+  //   ),
+  //   appBarTheme: AppBarTheme(
+  //     systemOverlayStyle: SystemUiOverlayStyle(
+  //       statusBarColor: AppTheme.appbarColor,
+  //       statusBarBrightness: Brightness.dark,
+  //       statusBarIconBrightness: Brightness.dark,
+  //       systemNavigationBarIconBrightness: Brightness.dark,
+  //     ),
+  //   ),
+  //   textTheme: TextTheme(
+  //     displayLarge: TextStyle(
+  //       color: textColor,
+  //     ),
+  //     displayMedium: TextStyle(color: textColor),
+  //     displaySmall: TextStyle(color: textColor),
+  //     headlineMedium: TextStyle(color: textColor),
+  //     headlineSmall: TextStyle(color: textColor),
+  //     titleMedium: TextStyle(color: textColor),
+  //     titleSmall: TextStyle(color: textColor),
+  //     labelLarge: TextStyle(color: textColor),
+  //   ),
+  //   iconTheme: IconThemeData(color: Colors.black54),
+  //   pageTransitionsTheme: PageTransitionsTheme(
+  //     builders: {TargetPlatform.android: CupertinoPageTransitionsBuilder(), TargetPlatform.iOS: CupertinoPageTransitionsBuilder()},
+  //   ),
+  //   fontFamily: 'Cera Regular',
+  //   primaryTextTheme: TextTheme(
+  //     displayMedium: TextStyle(color: Colors.black54),
+  //   ),
+  //   textSelectionTheme: TextSelectionThemeData(
+  //     cursorColor: Colors.black54,
+  //     selectionColor: Colors.black54,
+  //     selectionHandleColor: Colors.black54,
+  //   ),
+  // );
 }

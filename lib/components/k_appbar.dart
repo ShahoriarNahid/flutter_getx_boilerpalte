@@ -11,7 +11,7 @@ import '../helper/k_text.dart';
 import '../helper/route.dart';
 import '../pages/main_page.dart';
 
-class KAppbar extends StatelessWidget with PreferredSizeWidget {
+class KAppbar extends StatelessWidget implements PreferredSizeWidget {
   // Widget? flexiblespace;
   // Widget? bottom;
   // KAppbar({

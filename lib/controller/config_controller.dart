@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_getx_boilerpalte/helper/route.dart';
 
 import 'package:get/get.dart';
 
@@ -10,8 +11,6 @@ import '../pages/main_page.dart';
 
 class ConfigController extends GetxController {
   Future<void> initAppConfig() async {
-    WidgetsFlutterBinding.ensureInitialized();
-
     //--------------------- End -------------------------
 
     // Setup App system theme [AppBar & System Navigation]
@@ -37,7 +36,7 @@ class ConfigController extends GetxController {
   void init() async {
     await Future.delayed(Duration(seconds: 1));
 
-    Get.offAll(MainPage());
+    offAll(MainPage());
 
 // ---------------------------------------------------
   }

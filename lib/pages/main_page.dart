@@ -8,7 +8,6 @@ import '../components/k_appbar.dart';
 import '../config/app_theme.dart';
 import '../config/constants.dart';
 import '../controller/menu_controller.dart';
-import '../helper/render_svg.dart';
 import 'left_drawer.dart';
 
 class MainPage extends StatefulWidget {
@@ -74,13 +73,14 @@ class _MainPageState extends State<MainPage> {
                       },
                       child: SvgPicture.asset(
                         '${Constants.svgPath}/$item',
-                        color: menuC.getMenuIndex(item) == 0
-                            ? Colors.transparent
-                            : menuC.getMenuIndex(item) == 1
-                                ? null
-                                : menuC.currentIndex.value == menuC.getMenuIndex(item)
-                                    ? AppTheme.color2
-                                    : AppTheme.color6,
+
+                        // color: menuC.getMenuIndex(item) == 0
+                        //     ? Colors.transparent
+                        //     : menuC.getMenuIndex(item) == 1
+                        //         ? null
+                        //         : menuC.currentIndex.value == menuC.getMenuIndex(item)
+                        //             ? AppTheme.color2
+                        //             : AppTheme.color6,
                       ),
                     ),
                   )

@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import '../controller/config_controller.dart';
 import '../helper/hex_color.dart';
 import '../helper/render_img.dart';
-import '../helper/render_svg.dart';
 
 class SplashPage extends StatefulWidget {
   @override
